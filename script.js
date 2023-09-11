@@ -1,8 +1,8 @@
 "use strict";
 
-let allTasks = [];
+let allGroceries = [];
 
-const Task = {
+const Grocery = {
   name: "",
   desc: "",
   quantity: 0,
@@ -18,31 +18,33 @@ function init() {
 
 function addEventListeners() {
   console.log("function: addEventListeners");
-  document.querySelector("#create-task").addEventListener("click", createTask);
+  document
+    .querySelector("#add-grocery")
+    .addEventListener("click", createGrocery);
 }
 
-function createTask() {
-  console.log("function: createTask");
-  let task = createObj();
-  allTasks.push(task);
-  console.log(allTasks);
-  displayTasks(task);
+function createGrocery() {
+  console.log("function: createGrocery");
+  let grocery = createObj();
+  allGroceries.push(grocery);
+  console.log(allGroceries);
+  displayGroceries(grocery);
 }
 
 function createObj() {
-  const task = Object.create(Task);
-  task.name = document.getElementById("taskName").value;
-  task.desc = document.getElementById("taskDesc").value;
-  task.quantity = document.getElementById("quantity").value;
-  task.finished = false;
-  return task;
+  const grocery = Object.create(Grocery);
+  grocery.name = document.getElementById("groceryName").value;
+  grocery.desc = document.getElementById("groceryDesc").value;
+  grocery.quantity = document.getElementById("quantity").value;
+  grocery.finished = false;
+  return grocery;
 }
 
-function displayTasks(task) {
+function displayGroceries(grocery) {
   const clone = document.querySelector("template").content.cloneNode(true);
 
-  clone.querySelector(".task-name").textContent = task.name;
-  clone.querySelector(".task-desc").textContent = task.desc;
-  clone.querySelector(".task-quantity").textContent = task.quantity;
-  document.querySelector(".unfinished-tasks").appendChild(clone);
+  clone.querySelector(".grocery-name").textContent = grocery.name;
+  clone.querySelector(".grocery-desc").textContent = grocery.desc;
+  clone.querySelector(".quantity").textContent = grocery.quantity;
+  document.querySelector(".groceries").appendChild(clone);
 }

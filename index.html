@@ -5,45 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do app</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/uex7yea.css" />
   </head>
   <body>
     <header>
       <div class="header-content">
-        <a href="#">logo</a>
-        <div class="theme">theme picker here</div>
+        <a href="#">Grocery app</a>
+        <div class="theme">Select theme</div>
       </div>
     </header>
     <main>
-      <div class="task-form-container">
+      <div class="form-column">
+        <h2>Fill in the form and add an item to your grocery list</h2>
         <form>
-          <label for="taskName">Task name:</label>
-          <input type="text" name="taskName" id="taskName" />
-          <label for="taskDesc">Task description:</label>
-          <textarea name="taskDesc" id="taskDesc" cols="30" rows="5"></textarea>
-          <label for="quantity">Quantity (optional)</label>
-          <input type="number" name="quantity" id="quantity" />
+          <input
+            type="text"
+            name="groceryName"
+            id="groceryName"
+            placeholder="Name of grocery..."
+            required
+          />
+          <textarea
+            name="groceryDesc"
+            id="groceryDesc"
+            cols="30"
+            rows="5"
+            placeholder="Extra notes (organic, etc)..."
+          ></textarea>
+          <input
+            type="number"
+            name="quantity"
+            id="quantity"
+            placeholder="Quantity of grocery"
+          />
         </form>
-        <button id="create-task">Create task</button>
+        <button id="add-grocery">Add to grocery list</button>
       </div>
-      <div class="all-tasks">
-        <div class="unfinished-tasks">
-          <h2>To-do</h2>
-          <!-- <div class="task">
-            <div class="task-info">
-              <h3 class="task-name">Name of task</h3>
-              <p class="task-desc">short description</p>
-              <ul class="things-to-do"></ul>
-            </div>
-          </div> -->
-        </div>
-        <div class="finished-tasks">
-          <h2>Finished tasks</h2>
-          <div class="task">
-            <div class="task-info">
-              <h3 class="task-name">Name of task</h3>
-              <p class="task-desc">Short description</p>
-              <ul class="things-to-do"></ul>
-            </div>
+      <div class="grocery-column">
+        <h2>Grocery list</h2>
+        <div class="groceries">
+          <div class="grocery">
+            <h3 class="grocery-name">Name of grocery</h3>
+            <p class="grocery-desc">Extra notes</p>
+            <p class="quantity">Quantity</p>
           </div>
         </div>
       </div>
@@ -52,12 +56,11 @@
       <p>footer</p>
     </footer>
     <template>
-      <div class="task">
-        <div class="task-info">
-          <h3 class="task-name">Name of task</h3>
-          <p class="task-desc">Short description</p>
-          <p class="task-quantity">Quantity</p>
-          <ul class="things-to-do"></ul>
+      <div class="grocery">
+        <div class="grocery-info">
+          <h3 class="grocery-name">Name of grocery</h3>
+          <p class="grocery-desc">Extra notes</p>
+          <p class="quantity">Quantity</p>
         </div>
       </div>
     </template>
