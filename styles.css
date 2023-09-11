@@ -26,8 +26,26 @@ body > * {
   flex-wrap: wrap;
 }
 
-.main-content {
+.all-tasks {
   display: flex;
   justify-content: space-between;
   gap: 4rem;
+}
+
+.task-form-container {
+  margin-bottom: 50px;
+  width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+}
+input {
+  margin-bottom: 15px;
+}
+
+.task {
+  margin-bottom: 40px;
 }

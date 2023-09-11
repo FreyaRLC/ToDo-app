@@ -14,33 +14,35 @@
       </div>
     </header>
     <main>
-      <p>main</p>
-      <div class="main-content">
-        <div class="to-do">
+      <div class="task-form-container">
+        <form>
+          <label for="taskName">Task name:</label>
+          <input type="text" name="taskName" id="taskName" />
+          <label for="taskDesc">Task description:</label>
+          <textarea name="taskDesc" id="taskDesc" cols="30" rows="5"></textarea>
+          <label for="quantity">Quantity (optional)</label>
+          <input type="number" name="quantity" id="quantity" />
+        </form>
+        <button id="create-task">Create task</button>
+      </div>
+      <div class="all-tasks">
+        <div class="unfinished-tasks">
           <h2>To-do</h2>
-          <div class="opgave">
-            <div class="opgave-info">
-              <h3 class="navn">Navn på opgave</h3>
-              <p class="kort-beskrivelse">kort beskrivelse</p>
-              <ul class="things-to-do">
-                <li>to do 1</li>
-                <li>to do 2</li>
-                <li>to do 3</li>
-              </ul>
+          <!-- <div class="task">
+            <div class="task-info">
+              <h3 class="task-name">Name of task</h3>
+              <p class="task-desc">short description</p>
+              <ul class="things-to-do"></ul>
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="done">
-          <h2>Færdige opgaver</h2>
-          <div class="opgave">
-            <div class="opgave-info">
-              <h3 class="navn">Navn på opgave</h3>
-              <p class="kort-beskrivelse">kort beskrivelse</p>
-              <ul class="things-to-do">
-                <li>to do 1</li>
-                <li>to do 2</li>
-                <li>to do 3</li>
-              </ul>
+        <div class="finished-tasks">
+          <h2>Finished tasks</h2>
+          <div class="task">
+            <div class="task-info">
+              <h3 class="task-name">Name of task</h3>
+              <p class="task-desc">Short description</p>
+              <ul class="things-to-do"></ul>
             </div>
           </div>
         </div>
@@ -49,6 +51,16 @@
     <footer>
       <p>footer</p>
     </footer>
+    <template>
+      <div class="task">
+        <div class="task-info">
+          <h3 class="task-name">Name of task</h3>
+          <p class="task-desc">Short description</p>
+          <p class="task-quantity">Quantity</p>
+          <ul class="things-to-do"></ul>
+        </div>
+      </div>
+    </template>
     <script src="script.js"></script>
   </body>
 </html>
