@@ -3,3 +3,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header,
+main {
+  margin-bottom: 50px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 80vw 1fr;
+}
+
+body > * {
+  /* background-color: aquamarine; */
+  grid-column: 2/3;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
