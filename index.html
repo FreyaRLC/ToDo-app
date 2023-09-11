@@ -45,9 +45,34 @@
         <h2>Grocery list</h2>
         <div class="groceries">
           <div class="grocery">
-            <h3 class="grocery-name">Name of grocery</h3>
-            <p class="grocery-desc">Extra notes</p>
-            <p class="quantity">Quantity</p>
+            <div class="grocery-info">
+              <h3 class="grocery-name">Name of grocery</h3>
+              <p class="grocery-desc">Extra notes</p>
+              <p class="quantity">Quantity</p>
+            </div>
+            <div class="checkbox-container">
+              <input
+                type="checkbox"
+                name="bought-or-not"
+                class="bought-or-not"
+              />
+              <span class="checkmark"></span>
+            </div>
+          </div>
+          <div class="grocery">
+            <div class="grocery-info">
+              <h3 class="grocery-name">Name of grocery2</h3>
+              <p class="grocery-desc">Extra notes2</p>
+              <p class="quantity">Quantity2</p>
+            </div>
+            <div class="checkbox-container">
+              <input
+                type="checkbox"
+                name="bought-or-not"
+                class="bought-or-not"
+              />
+              <span class="checkmark"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -61,6 +86,9 @@
           <h3 class="grocery-name">Name of grocery</h3>
           <p class="grocery-desc">Extra notes</p>
           <p class="quantity">Quantity</p>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="bought-or-not" id="bought-or-not" />
         </div>
       </div>
     </template>

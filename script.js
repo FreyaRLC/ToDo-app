@@ -9,6 +9,9 @@ const Grocery = {
   finished: false,
 };
 
+const submitButton = document.querySelector("#add-grocery");
+const checkboxes = document.querySelectorAll(".bought-or-not");
+
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
@@ -18,9 +21,10 @@ function init() {
 
 function addEventListeners() {
   console.log("function: addEventListeners");
-  document
-    .querySelector("#add-grocery")
-    .addEventListener("click", createGrocery);
+  submitButton.addEventListener("click", createGrocery);
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", toggleBoughtStatus);
+  });
 }
 
 function createGrocery() {
@@ -38,6 +42,17 @@ function createObj() {
   grocery.quantity = document.getElementById("quantity").value;
   grocery.finished = false;
   return grocery;
+}
+
+function toggleBoughtStatus(e) {
+  const checkbox = e.target;
+  const groceryItem = checkbox.closest(".grocery");
+  // If the checkbox returns true, add the class. else, remove.
+  if (groceryItem) {
+    checkbox.checked
+      ? groceryItem.classList.add("bought")
+      : groceryItem.classList.remove("bought");
+  }
 }
 
 function displayGroceries(grocery) {

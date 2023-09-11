@@ -102,3 +102,7 @@ button {
   border-radius: 10px;
   font-weight: bold;
 }
+
+.bought {
+  text-decoration: line-through;
+}
