@@ -7,7 +7,10 @@ const Grocery = {
   desc: "",
   quantity: 0,
   bought: false,
+  id: 0,
 };
+
+let groceryCounter = 1;
 
 const submitButton = document.querySelector("#add");
 const checkboxes = document.querySelectorAll(".checkbox");
@@ -47,6 +50,9 @@ function createGrocery() {
   console.log(allGroceries);
   displayGroceries(grocery);
 
+  // adds 1 to groceryCounter every time a grocery is created
+  groceryCounter++;
+
   // makes sure newly created groceries have eventlisteners
   attachGroceryEventListeners();
 }
@@ -57,6 +63,7 @@ function createObj() {
   grocery.desc = document.getElementById("groceryDesc").value;
   grocery.quantity = document.getElementById("quantity").value;
   grocery.bought = false;
+  grocery.id = `grocery${groceryCounter}`;
   return grocery;
 }
 
@@ -74,6 +81,7 @@ function toggleBoughtStatus(e) {
 function displayGroceries(grocery) {
   const clone = document.querySelector("template").content.cloneNode(true);
 
+  clone.querySelector(".grocery").setAttribute("id", grocery.id);
   clone.querySelector("[data-field='name']").textContent = grocery.name;
   clone.querySelector("[data-field='details']").textContent = grocery.desc;
   clone.querySelector("[data-field='quantity']").textContent = grocery.quantity;
