@@ -6,11 +6,12 @@ const Grocery = {
   name: "",
   desc: "",
   quantity: 0,
-  finished: false,
+  bought: false,
 };
 
-const submitButton = document.querySelector("#add-grocery");
-const checkboxes = document.querySelectorAll(".bought-or-not");
+const submitButton = document.querySelector("#add");
+const checkboxes = document.querySelectorAll(".checkbox");
+const groceriesDest = document.querySelector(".grocery-dest");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -22,8 +23,20 @@ function init() {
 function addEventListeners() {
   console.log("function: addEventListeners");
   submitButton.addEventListener("click", createGrocery);
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", toggleBoughtStatus);
+  attachGroceryEventListeners();
+}
+
+function attachGroceryEventListeners() {
+  // Checkboxes
+  groceriesDest.addEventListener("change", toggleBoughtStatus);
+
+  // Delete buttons
+  const deleteButtons = document.querySelectorAll(".delete");
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const relevantGrocery = button.closest(".grocery");
+      relevantGrocery.classList.add("deleted");
+    });
   });
 }
 
@@ -33,6 +46,9 @@ function createGrocery() {
   allGroceries.push(grocery);
   console.log(allGroceries);
   displayGroceries(grocery);
+
+  // makes sure newly created groceries have eventlisteners
+  attachGroceryEventListeners();
 }
 
 function createObj() {
@@ -40,7 +56,7 @@ function createObj() {
   grocery.name = document.getElementById("groceryName").value;
   grocery.desc = document.getElementById("groceryDesc").value;
   grocery.quantity = document.getElementById("quantity").value;
-  grocery.finished = false;
+  grocery.bought = false;
   return grocery;
 }
 
@@ -58,8 +74,8 @@ function toggleBoughtStatus(e) {
 function displayGroceries(grocery) {
   const clone = document.querySelector("template").content.cloneNode(true);
 
-  clone.querySelector(".grocery-name").textContent = grocery.name;
-  clone.querySelector(".grocery-desc").textContent = grocery.desc;
-  clone.querySelector(".quantity").textContent = grocery.quantity;
-  document.querySelector(".groceries").appendChild(clone);
+  clone.querySelector("[data-field='name']").textContent = grocery.name;
+  clone.querySelector("[data-field='details']").textContent = grocery.desc;
+  clone.querySelector("[data-field='quantity']").textContent = grocery.quantity;
+  groceriesDest.appendChild(clone);
 }

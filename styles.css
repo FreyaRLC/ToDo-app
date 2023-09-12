@@ -1,108 +1,119 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
 }
 
-body {
-  display: grid;
-  grid-template-columns: 1fr 70vw 1fr;
-  background-color: #f8f8f8;
+/* Style for the table header */
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  height: 30px;
+  text-align: left;
+  padding: 8px;
 }
 
-body > * {
-  grid-column: 2/3;
-}
-header,
-main {
-  margin-bottom: 50px;
+/* Style for alternating row colors */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10rem;
+/* Style for table data cells */
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.groceries {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 4rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  /* gap: 15px; */
-}
-input,
-textarea {
-  margin-bottom: 15px;
+/* Style for the delete button */
+td button {
+  background-color: #b11b1b;
+  color: white;
   border: none;
-  /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); */
-  border-radius: 10px;
-  padding: 10px;
-  resize: none;
+  padding: 6px 10px;
+  cursor: pointer;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #0b0757;
-  opacity: 25%;
-  font-family: "owners-text", sans-serif;
-  font-size: 14px;
-}
-
-.grocery {
-  /* margin-bottom: 40px; */
-  background-color: white;
-  box-shadow: 0px 5px 10px rgba(104, 104, 104, 0.1);
-  border-radius: 10px;
-  padding: 2rem;
-}
-
-.form-column {
-  background-color: rgba(41, 63, 204, 0.1);
-  border-radius: 10px;
-  padding: 2rem;
-}
-
-p {
-  font-family: "owners-text", sans-serif;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "komet", sans-serif;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-h2 {
-  color: #090f4e;
+/* Style for the checkbox input */
+td input[type="checkbox"] {
+  cursor: pointer;
 }
 
 button {
-  background-color: #293fcc;
+  background-color: #1e1bb1;
   color: white;
-  font-family: "komet", sans-serif;
-  padding: 15px 50px;
   border: none;
-  border-radius: 10px;
-  font-weight: bold;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.form-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  border: 3px solid #ddd;
+  padding: 10px;
+}
+textarea {
+  resize: none;
+}
+
+main {
+  margin: 0 3rem;
+}
+
+main > * {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+p,
+input::placeholder,
+textarea::placeholder,
+table,
+button {
+  font-family: "owners-text", sans-serif;
+}
+
+p,
+input::placeholder,
+textarea::placeholder,
+button,
+tbody {
+  font-size: 14px;
+}
+
+thead {
+  font-size: 16px;
+}
+
+h1,
+h2 {
+  font-family: "komet", sans-serif;
 }
 
 .bought {
   text-decoration: line-through;
+  /* opacity: 50%; */
+}
+.bought [data-field="name"],
+.bought [data-field="details"],
+.bought [data-field="quantity"] {
+  opacity: 50%;
+}
+
+.deleted {
+  display: none;
 }

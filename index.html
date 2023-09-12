@@ -3,26 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-do app</title>
+    <title>todo app</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/uex7yea.css" />
   </head>
   <body>
-    <header>
-      <div class="header-content">
-        <a href="#">Grocery app</a>
-        <div class="theme">Select theme</div>
-      </div>
-    </header>
     <main>
-      <div class="form-column">
+      <h1>Super duper amazing grocery list app</h1>
+      <div class="form-container">
         <h2>Fill in the form and add an item to your grocery list</h2>
         <form>
           <input
             type="text"
             name="groceryName"
             id="groceryName"
-            placeholder="Name of grocery..."
+            placeholder="What item?"
             required
           />
           <textarea
@@ -36,61 +31,36 @@
             type="number"
             name="quantity"
             id="quantity"
-            placeholder="Quantity of grocery"
+            placeholder="How many?"
           />
         </form>
-        <button id="add-grocery">Add to grocery list</button>
+        <button id="add">Add to grocery list</button>
       </div>
-      <div class="grocery-column">
-        <h2>Grocery list</h2>
-        <div class="groceries">
-          <div class="grocery">
-            <div class="grocery-info">
-              <h3 class="grocery-name">Name of grocery</h3>
-              <p class="grocery-desc">Extra notes</p>
-              <p class="quantity">Quantity</p>
-            </div>
-            <div class="checkbox-container">
-              <input
-                type="checkbox"
-                name="bought-or-not"
-                class="bought-or-not"
-              />
-              <span class="checkmark"></span>
-            </div>
-          </div>
-          <div class="grocery">
-            <div class="grocery-info">
-              <h3 class="grocery-name">Name of grocery2</h3>
-              <p class="grocery-desc">Extra notes2</p>
-              <p class="quantity">Quantity2</p>
-            </div>
-            <div class="checkbox-container">
-              <input
-                type="checkbox"
-                name="bought-or-not"
-                class="bought-or-not"
-              />
-              <span class="checkmark"></span>
-            </div>
-          </div>
-        </div>
+      <div class="grocery-list">
+        <table>
+          <thead>
+            <tr>
+              <th>Grocery</th>
+              <th>Details</th>
+              <th>Amount</th>
+              <th>Bought</th>
+              <th>Delete item</th>
+            </tr>
+          </thead>
+          <tbody class="grocery-dest">
+            <!-- content added here -->
+          </tbody>
+        </table>
       </div>
     </main>
-    <footer>
-      <p>footer</p>
-    </footer>
     <template>
-      <div class="grocery">
-        <div class="grocery-info">
-          <h3 class="grocery-name">Name of grocery</h3>
-          <p class="grocery-desc">Extra notes</p>
-          <p class="quantity">Quantity</p>
-        </div>
-        <div class="checkbox-container">
-          <input type="checkbox" name="bought-or-not" id="bought-or-not" />
-        </div>
-      </div>
+      <tr class="grocery">
+        <td data-field="name">Banana</td>
+        <td data-field="details">Organic</td>
+        <td data-field="quantity">10</td>
+        <td><input type="checkbox" class="checkbox" /></td>
+        <td><button class="delete">Delete</button></td>
+      </tr>
     </template>
     <script src="script.js"></script>
   </body>
