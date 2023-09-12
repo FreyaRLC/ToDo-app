@@ -14,7 +14,8 @@ let groceryCounter = 1;
 
 const submitButton = document.querySelector("#add");
 const checkboxes = document.querySelectorAll(".checkbox");
-const groceriesDest = document.querySelector(".grocery-dest");
+const toBuyDest = document.querySelector(".to-buy");
+const boughtDest = document.querySelector(".bought");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -31,7 +32,11 @@ function addEventListeners() {
 
 function attachGroceryEventListeners() {
   // Checkboxes
-  groceriesDest.addEventListener("change", toggleBoughtStatus);
+
+  const groceryTables = document.querySelectorAll("table");
+  groceryTables.forEach((table) => {
+    table.addEventListener("change", toggleBoughtStatus);
+  });
 
   // Delete buttons
   const deleteButtons = document.querySelectorAll(".delete");
@@ -72,10 +77,24 @@ function toggleBoughtStatus(e) {
   const groceryItem = checkbox.closest(".grocery");
   // If the checkbox returns true, add the class. else, remove.
   if (groceryItem) {
-    checkbox.checked
-      ? groceryItem.classList.add("bought")
-      : groceryItem.classList.remove("bought");
+    if (checkbox.checked) {
+      moveToBought(groceryItem);
+    } else {
+      moveToBuy(groceryItem);
+    }
   }
+}
+
+function moveToBought(grocery) {
+  console.log("function: moveToBought");
+  boughtDest.appendChild(grocery);
+  grocery.classList.add("bought");
+}
+
+function moveToBuy(grocery) {
+  console.log("function: moveToBuy");
+  toBuyDest.appendChild(grocery);
+  grocery.classList.remove("bought");
 }
 
 function displayGroceries(grocery) {
@@ -85,5 +104,5 @@ function displayGroceries(grocery) {
   clone.querySelector("[data-field='name']").textContent = grocery.name;
   clone.querySelector("[data-field='details']").textContent = grocery.desc;
   clone.querySelector("[data-field='quantity']").textContent = grocery.quantity;
-  groceriesDest.appendChild(clone);
+  toBuyDest.appendChild(clone);
 }
