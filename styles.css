@@ -38,6 +38,7 @@ td input[type="checkbox"] {
   cursor: pointer;
 }
 
+/* Base button styling */
 button {
   background-color: #1e1bb1;
   color: white;
@@ -46,11 +47,14 @@ button {
   cursor: pointer;
 }
 
+/* Centers form to middle */
 .form-container {
   margin-left: auto;
   margin-right: auto;
   width: 500px;
 }
+
+/* Gap etc between form elements */
 form {
   display: flex;
   flex-direction: column;
@@ -58,19 +62,23 @@ form {
   margin-bottom: 1rem;
 }
 
+/* Gives input + textarea same border styling as table */
 input,
 textarea {
   border: 3px solid #ddd;
   padding: 10px;
 }
+
 textarea {
   resize: none;
 }
 
+/* Adds a bit of margin to the left and right of main */
 main {
   margin: 0 3rem;
 }
 
+/* Spacing between main child elements */
 main > * {
   margin-bottom: 2rem;
 }
@@ -104,16 +112,18 @@ h2 {
   font-family: "komet", sans-serif;
 }
 
+/* Styling for when the checkbox is clicked */
 .bought {
   text-decoration: line-through;
-  /* opacity: 50%; */
 }
+/* Continuation of above */
 .bought [data-field="name"],
 .bought [data-field="details"],
 .bought [data-field="quantity"] {
   opacity: 50%;
 }
 
+/* BEGONE, GROCERY! */
 .deleted {
   display: none;
 }
