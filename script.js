@@ -20,12 +20,12 @@ const boughtDest = document.querySelector(".bought");
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  console.log("function: init");
+  // console.log("function: init");
   addEventListeners();
 }
 
 function addEventListeners() {
-  console.log("function: addEventListeners");
+  // console.log("function: addEventListeners");
   submitButton.addEventListener("click", createGrocery);
   attachGroceryEventListeners();
 }
@@ -49,10 +49,10 @@ function attachGroceryEventListeners() {
 }
 
 function createGrocery() {
-  console.log("function: createGrocery");
+  // console.log("function: createGrocery");
   let grocery = createObj();
   allGroceries.push(grocery);
-  console.log(allGroceries);
+  // console.log(allGroceries);
   displayGroceries(grocery);
 
   // adds 1 to groceryCounter every time a grocery is created
@@ -91,13 +91,13 @@ function toggleBoughtStatus(e) {
 }
 
 function moveToBought(grocery) {
-  console.log("function: moveToBought");
+  // console.log("function: moveToBought");
   boughtDest.appendChild(grocery);
   grocery.classList.add("bought");
 }
 
 function moveToBuy(grocery) {
-  console.log("function: moveToBuy");
+  // console.log("function: moveToBuy");
   toBuyDest.appendChild(grocery);
   grocery.classList.remove("bought");
 }

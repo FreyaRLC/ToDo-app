@@ -17,6 +17,9 @@ th {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+tr:nth-child(odd) {
+  background-color: #fff;
+}
 
 /* Style for table data cells */
 td {
@@ -115,7 +118,9 @@ h2 {
 /* Styling for when the checkbox is clicked */
 .bought {
   text-decoration: line-through;
+  background-color: #ededed !important;
 }
+
 /* Continuation of above */
 .bought [data-field="name"],
 .bought [data-field="details"],
@@ -126,4 +131,22 @@ h2 {
 /* BEGONE, GROCERY! */
 .deleted {
   display: none;
+}
+
+th:nth-child(1),
+[data-field="name"] {
+  width: 20%;
+}
+th:nth-child(2),
+[data-field="details"] {
+  width: 55%;
+}
+th:nth-child(3),
+[data-field="quantity"] {
+  width: 100px;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 10%;
 }
