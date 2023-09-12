@@ -77,6 +77,11 @@ function toggleBoughtStatus(e) {
   const groceryItem = checkbox.closest(".grocery");
   // If the checkbox returns true, add the class. else, remove.
   if (groceryItem) {
+    const groceryId = groceryItem.getAttribute("id");
+    // finds the correct object
+    const grocery = allGroceries.find((grocery) => grocery.id === groceryId);
+    // changes that object's bought property to match checkbox boolean value
+    grocery.bought = checkbox.checked;
     if (checkbox.checked) {
       moveToBought(groceryItem);
     } else {
