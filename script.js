@@ -111,3 +111,10 @@ function displayGroceries(grocery) {
   clone.querySelector("[data-field='quantity']").textContent = grocery.quantity;
   toBuyDest.appendChild(clone);
 }
+
+/*
+TO DO
+-local storage, if i can figure it out
+-make everything prettier :)
+
+*/
