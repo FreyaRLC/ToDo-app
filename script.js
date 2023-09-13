@@ -27,12 +27,8 @@ function init() {
 function addEventListeners() {
   // console.log("function: addEventListeners");
   submitButton.addEventListener("click", createGrocery);
-  attachGroceryEventListeners();
-}
 
-function attachGroceryEventListeners() {
   // Checkboxes
-
   const groceryTables = document.querySelectorAll("table");
   groceryTables.forEach((table) => {
     table.addEventListener("change", toggleBoughtStatus);
@@ -49,17 +45,15 @@ function attachGroceryEventListeners() {
 }
 
 function createGrocery() {
-  // console.log("function: createGrocery");
   let grocery = createObj();
   allGroceries.push(grocery);
-  // console.log(allGroceries);
   displayGroceries(grocery);
 
   // adds 1 to groceryCounter every time a grocery is created
   groceryCounter++;
 
   // makes sure newly created groceries have eventlisteners
-  attachGroceryEventListeners();
+  addEventListeners();
 }
 
 function createObj() {
