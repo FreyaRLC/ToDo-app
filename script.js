@@ -113,11 +113,20 @@ function displayGroceries(grocery) {
   clone.querySelector("[data-field='details']").textContent = grocery.desc;
   clone.querySelector("[data-field='quantity']").textContent = grocery.quantity;
   toBuyDest.appendChild(clone);
+  resetInputFields();
+}
+
+function resetInputFields() {
+  // "resets" the input fields so user doesn't have to waste time deleting their old input.
+  document.getElementById("groceryName").value = "";
+  document.getElementById("groceryDesc").value = "";
+  document.getElementById("quantity").value = "";
 }
 
 /*
 TO DO
 -local storage, if i can figure it out
 -make everything prettier :)
+-edit / organize according to MVC?
 
 */
