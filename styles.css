@@ -133,7 +133,7 @@ h2 {
 /* Styling for when the checkbox is clicked */
 .bought {
   text-decoration: line-through;
-  background-color: #ededed !important;
+  background-color: #dfdbf0 !important;
 }
 
 /* Continuation of above */
