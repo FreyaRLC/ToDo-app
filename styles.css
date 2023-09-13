@@ -1,13 +1,13 @@
 table {
   border-collapse: collapse;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 3px solid rgb(212, 207, 232);
 }
 
 /* Style for the table header */
 th {
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
+  background-color: rgb(230, 224, 250);
+  border: 1px solid rgb(212, 207, 232);
   height: 30px;
   text-align: left;
   padding: 8px;
@@ -15,7 +15,7 @@ th {
 
 /* Style for alternating row colors */
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: rgb(245, 240, 255);
 }
 tr:nth-child(odd) {
   background-color: #fff;
@@ -23,7 +23,7 @@ tr:nth-child(odd) {
 
 /* Style for table data cells */
 td {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(212, 207, 232);
   padding: 8px;
 }
 
@@ -43,7 +43,7 @@ td input[type="checkbox"] {
 
 /* Base button styling */
 button {
-  background-color: #1e1bb1;
+  background-color: #603ab7;
   color: white;
   border: none;
   padding: 6px 10px;
@@ -65,10 +65,10 @@ form {
   margin-bottom: 1rem;
 }
 
-/* Gives input + textarea same border styling as table */
+/* Gives input + textarea similar border styling as table */
 input,
 textarea {
-  border: 3px solid #ddd;
+  border: 3px solid rgb(212, 207, 232);
   padding: 10px;
 }
 
@@ -79,6 +79,10 @@ textarea {
 /* Adds a bit of margin to the left and right of main */
 main {
   margin: 0 3rem;
+}
+
+body {
+  background-color: lavender;
 }
 
 /* Spacing between main child elements */
@@ -115,6 +119,17 @@ h2 {
   font-family: "komet", sans-serif;
 }
 
+h1 {
+  text-decoration: underline;
+  font-size: 2.3rem;
+  color: #2d273d;
+}
+
+h2 {
+  font-weight: normal;
+  color: #433863;
+}
+
 /* Styling for when the checkbox is clicked */
 .bought {
   text-decoration: line-through;
@@ -149,4 +164,10 @@ th:nth-child(3),
 th:nth-child(5),
 td:nth-child(5) {
   width: 10%;
+}
+td:nth-child(4),
+td:nth-child(5),
+th:nth-child(4),
+th:nth-child(5) {
+  text-align: center;
 }

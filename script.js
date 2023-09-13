@@ -68,18 +68,21 @@ function createObj() {
   grocery.desc = document.getElementById("groceryDesc").value;
   grocery.quantity = document.getElementById("quantity").value;
   grocery.bought = false;
-  grocery.id = `grocery${groceryCounter}`;
+  grocery.id = `grocery-${groceryCounter}`;
   return grocery;
 }
 
 function toggleBoughtStatus(e) {
+  // get the element that triggered the function (the checkbox)
   const checkbox = e.target;
+  // get the checkbox's closest ancestor that has the grocery class.
   const groceryItem = checkbox.closest(".grocery");
-  // If the checkbox returns true, add the class. else, remove.
+
   if (groceryItem) {
     const groceryId = groceryItem.getAttribute("id");
     // finds the correct object
     const grocery = allGroceries.find((grocery) => grocery.id === groceryId);
+
     // changes that object's bought property to match checkbox boolean value
     grocery.bought = checkbox.checked;
     if (checkbox.checked) {
