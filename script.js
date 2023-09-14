@@ -68,13 +68,13 @@ function createObj() {
 }
 
 function addAnimation() {
-  const text = document.querySelector(".fade-text");
+  const text = document.querySelector(".feedback-text");
   text.classList.add("fade-animation");
   text.addEventListener("animationend", removeAnimation);
 }
 
 function removeAnimation() {
-  const text = document.querySelector(".fade-text");
+  const text = document.querySelector(".feedback-text");
   text.classList.remove("fade-animation");
 }
 

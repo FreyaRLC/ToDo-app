@@ -173,14 +173,20 @@ th:nth-child(5) {
 }
 
 /* Feedback text & fade animation */
-.feedback-text {
+.feedback-container {
   display: flex;
   justify-content: center;
 }
 
-.fade-text {
+.feedback-text {
+  font-family: "owners-text", sans-serif;
   opacity: 0;
-  font-size: 25px;
+  font-weight: bold;
+  color: #45337c;
+}
+
+.feedback-text p {
+  font-size: 20px;
 }
 
 .fade-animation {
