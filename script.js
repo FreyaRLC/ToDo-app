@@ -63,7 +63,19 @@ function createObj() {
   grocery.quantity = document.getElementById("quantity").value;
   grocery.bought = false;
   grocery.id = `grocery-${groceryCounter}`;
+  addAnimation();
   return grocery;
+}
+
+function addAnimation() {
+  const text = document.querySelector(".fade-text");
+  text.classList.add("fade-animation");
+  text.addEventListener("animationend", removeAnimation);
+}
+
+function removeAnimation() {
+  const text = document.querySelector(".fade-text");
+  text.classList.remove("fade-animation");
 }
 
 function toggleBoughtStatus(e) {
