@@ -16,6 +16,7 @@ const submitButton = document.querySelector("#add");
 const checkboxes = document.querySelectorAll(".checkbox");
 const toBuyDest = document.querySelector(".to-buy");
 const boughtDest = document.querySelector(".bought");
+const feedbackText = document.querySelector(".feedback-text");
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -40,6 +41,8 @@ function addEventListeners() {
     button.addEventListener("click", () => {
       const relevantGrocery = button.closest(".grocery");
       relevantGrocery.classList.add("deleted");
+      feedbackText.textContent = "you deleted a grocery!";
+      addAnimation();
     });
   });
 }
@@ -63,19 +66,18 @@ function createObj() {
   grocery.quantity = document.getElementById("quantity").value;
   grocery.bought = false;
   grocery.id = `grocery-${groceryCounter}`;
+  feedbackText.textContent = "Great, you added a grocery!";
   addAnimation();
   return grocery;
 }
 
 function addAnimation() {
-  const text = document.querySelector(".feedback-text");
-  text.classList.add("fade-animation");
-  text.addEventListener("animationend", removeAnimation);
+  feedbackText.classList.add("fade-animation");
+  feedbackText.addEventListener("animationend", removeAnimation);
 }
 
 function removeAnimation() {
-  const text = document.querySelector(".feedback-text");
-  text.classList.remove("fade-animation");
+  feedbackText.classList.remove("fade-animation");
 }
 
 function toggleBoughtStatus(e) {
@@ -93,8 +95,12 @@ function toggleBoughtStatus(e) {
     grocery.bought = checkbox.checked;
     if (checkbox.checked) {
       moveToBought(groceryItem);
+      feedbackText.textContent = "Grocery marked as bought.";
+      addAnimation();
     } else {
       moveToBuy(groceryItem);
+      feedbackText.textContent = "Grocery marked as to-buy.";
+      addAnimation();
     }
   }
 }
